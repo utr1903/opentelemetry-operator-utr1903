@@ -30,7 +30,7 @@ func colIndex(index, numCols int) int {
 	return index % numCols
 }
 
-func MakeNNewTargets(n int, numCollectors int, startingIndex int) map[string]*target.Item {
+func MakeNNewTargetsWithPreAssigningCollectors(n int, numCollectors int, startingIndex int) map[string]*target.Item {
 	toReturn := map[string]*target.Item{}
 	for i := startingIndex; i < n+startingIndex; i++ {
 		collector := fmt.Sprintf("collector-%d", colIndex(i, numCollectors))
